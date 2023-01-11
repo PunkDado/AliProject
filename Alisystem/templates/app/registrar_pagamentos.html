@@ -1,0 +1,22 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+
+    <h1>Registro de atendimentos</h1>
+    <p class="lead">Insira aqui um novo atendimento</p>
+    <form method="POST" class="post-form"> {% csrf_token %}
+        <table class="table table-bordered table-striped">{{ form.as_table }}</table>
+        <table class="table table-bordered table-striped">{{ form_1.as_table }}</table>
+        <button type="submit" class="save btn btn-default">Salvar e inserir um novo</button>
+    </form>
+ 
+    
+
+
+    <p><a href="{% url 'home' %}" class="btn btn-primary btn-large">Home &raquo;</a></p>
+</div>
+
+
+{% endblock %}
