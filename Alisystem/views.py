@@ -187,7 +187,7 @@ def mostra_pagamentos(request):
     header = ["Dentista"] 	# Lista todas as datas de repasse
     datas_repasse = Procedimentos_aplicado.objects.order_by('data_repasse').values_list('data_repasse', flat=True).distinct()
     for i in datas_repasse:
-        if i != None: header.append(i)	# { DENTISTA, data1, data2, ... }
+        if i != None: header.append(i.strftime("%d/%m/%Y"))	# { DENTISTA, data1, data2, ... }
     procedimentos_aplicados = Procedimentos_aplicado.objects.all()
     #usuarios = 
     table_liquido = [header]
